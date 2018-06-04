@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: eureka
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: true
+    #eureka 高可用，互相注册，3 个以上 两两相互注册
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  server:
+    enable-self-preservation: false

@@ -1,0 +1,26 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+spring:
+  application:
+    name: sso
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql:///mytestdb?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password:
+    driver-class-name: com.mysql.jdbc.Driver
+    minIdle: 1
+    maxActive: 2
+    initialSize: 1
+    timeBetweenEvictionRunsMillis: 3000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 'ZTM' FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
