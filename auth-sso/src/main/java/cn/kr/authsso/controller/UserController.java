@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Slf4j
 @RestController
-@RequestMapping("/api/user")
+@RequestMapping("/api/sso")
 public class UserController {
 
     @Autowired
@@ -71,9 +71,4 @@ public class UserController {
         return Result.success("hello",false);
     }
 
-    @GetMapping("toLogin")
-    public Result toLogin () {
-//        throw new GeneralException(401,"请登录");
-        return Result.fail(401,"请登录");
-    }
 }

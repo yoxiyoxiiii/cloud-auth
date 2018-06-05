@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: zuul
+
+#配置路由分发：/api/sso/** 将由 sso 服务处理
+#zuul 的路由 都会经过 zuulFilter
+zuul:
+  routes:
+    api-sso:
+      path: /api/sso/**
+      serviceId: sso
+  #忽略的url，routes 和 ignored-patterns 配置了相同的 url，也会被忽略
+  ignored-patterns: /api/sso/**

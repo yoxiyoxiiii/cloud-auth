@@ -7,6 +7,7 @@ import cn.kr.authsso.service.UserService;
 import cn.kr.exceptions.NotFindUserException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -17,6 +18,7 @@ import java.util.List;
 @Slf4j
 @Service
 @Transactional
+@CacheConfig(cacheNames = "sso")
 public class UserServiceImpl implements UserService {
 
     @Autowired
@@ -53,12 +55,14 @@ public class UserServiceImpl implements UserService {
         return false;
     }
 
+
     @Override
     public void login(String username, String password) {
-        User user = userMapper.findByUsernameAndPassword(username,password);
-        if(StringUtils.isEmpty(user)) {//用户名或密码错误！
-            throw new NotFindUserException();
-        }
+//        User user = userMapper.findByUsernameAndPassword(username,password);
+//        if(StringUtils.isEmpty(user)) {//用户名或密码错误！
+//            throw new NotFindUserException();
+//        }
+
     }
 
     @Override

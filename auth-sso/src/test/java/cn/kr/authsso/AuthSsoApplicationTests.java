@@ -1,5 +1,6 @@
 package cn.kr.authsso;
 
+import cn.kr.authsso.service.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,10 +24,12 @@ public class AuthSsoApplicationTests {
 	private RedisTemplate redisTemplate;
 
 	@Autowired
-	private RedisCacheManager cacheManager;
+	private UserService userService;
 	@Test
 	public void contextLoads() {
-		Collection<String> cacheNames = cacheManager.getCacheNames();
+
+		userService.login("hh","hh");
+		redisTemplate.opsForValue().set("sso:test","sso");
 	}
 
 }
