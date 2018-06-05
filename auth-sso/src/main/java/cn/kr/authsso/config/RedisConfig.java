@@ -21,17 +21,17 @@ import java.util.Arrays;
 @Configuration
 public class RedisConfig {
 
-    /**
-     * 配置 CacheManager
-     * @param redisTemplate
-     * @return
-     */
-    @Bean
-    public RedisCacheManager cacheManager(RedisTemplate redisTemplate) {
-        RedisCacheManager redisCacheManager = new RedisCacheManager(redisTemplate);
-        redisCacheManager.setCacheNames(Arrays.asList("sso2"));
-        return redisCacheManager;
-    }
+//    /**
+//     * 配置 CacheManager
+//     * @param redisTemplate
+//     * @return
+//     */
+//    @Bean
+//    public RedisCacheManager cacheManager(RedisTemplate redisTemplate) {
+//        RedisCacheManager redisCacheManager = new RedisCacheManager(redisTemplate);
+//        redisCacheManager.setCacheNames(Arrays.asList("sso2"));
+//        return redisCacheManager;
+//    }
 
     /**
      * 配置 RedisTemplate

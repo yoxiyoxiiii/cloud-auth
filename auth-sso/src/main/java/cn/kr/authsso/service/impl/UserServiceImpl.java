@@ -49,7 +49,7 @@ public class UserServiceImpl implements UserService {
 
 
     @Override
-    public boolean isLogin() {
+    public boolean isLogin(String token) {
         return false;
     }
 
@@ -59,5 +59,10 @@ public class UserServiceImpl implements UserService {
         if(StringUtils.isEmpty(user)) {//用户名或密码错误！
             throw new NotFindUserException();
         }
+    }
+
+    @Override
+    public int register(String username, String password) {
+        return 0;
     }
 }

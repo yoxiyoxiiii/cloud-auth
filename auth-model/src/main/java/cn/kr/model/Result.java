@@ -6,35 +6,24 @@ import lombok.Data;
 import java.io.Serializable;
 
 @Data
-public class Result implements Serializable {
+public class Result<T> implements Serializable {
 
     public static final int NO_USER=1000;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
     private int code;
     private String msg;
-    private Object data;
+    private T data;
 
-    private Result(int code,String msg,Object data){
+    public Result(){}
+
+    private Result(int code,String msg,T data){
         this.code = code;
         this.msg = msg;
         this.data = data;
     }
 
-    public static Result success(String msg, Object data) {
-        Result result = new Result(200,msg,data);
+    public static<T> Result<T> success(String msg, T data) {
+        Result result = new Result<T>(200,msg,data);
         return result;
     }
 

@@ -16,6 +16,7 @@
     <module>auth-sso</module>
     <module>auth-eureka</module>
     <module>auth-model</module>
+    <module>auth-zuul</module>
   </modules>
 
   <properties>
