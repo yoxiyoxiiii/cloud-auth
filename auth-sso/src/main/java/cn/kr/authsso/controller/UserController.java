@@ -1,12 +1,15 @@
 package cn.kr.authsso.controller;
 
 import cn.kr.authsso.service.UserService;
-import cn.kr.exceptions.GeneralException;
 import cn.kr.model.Result;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+@Api("单点登录")
 @Slf4j
 @RestController
 @RequestMapping("/api/sso")
@@ -21,10 +24,11 @@ public class UserController {
      * @param password
      * @return
      */
+    @ApiOperation("用户注册")
     @PostMapping
     public Result<Integer> register(
-            @RequestParam(name = "username") String username,
-            @RequestParam(name = "password") String password
+            @RequestParam(name = "username") @ApiParam("用户名") String username,
+            @RequestParam(name = "password") @ApiParam("密码") String password
     ) {
         try{
             int id = userService.register(username, password);
@@ -42,10 +46,11 @@ public class UserController {
      * @param password
      * @return
      */
+    @ApiOperation("用户登录")
     @PostMapping("login")
     public Result login(
-            @RequestParam(name = "username") String username,
-            @RequestParam(name = "password") String password
+            @RequestParam(name = "username") @ApiParam("用户名") String username,
+            @RequestParam(name = "password") @ApiParam("密码")String password
     ) {
         try{
             userService.login(username,password);

@@ -71,6 +71,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int register(String username, String password) {
-        return 0;
+        User user = User.builder().username(username).password(password).build();
+        return userMapper.insert(user);
     }
 }
