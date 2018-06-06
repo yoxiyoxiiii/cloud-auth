@@ -2,12 +2,12 @@ spring:
   application:
     name: zuul
 
-#ÅäÖÃÂ·ÓÉ·Ö·¢£º/api/sso/** ½«ÓÉ sso ·şÎñ´¦Àí
-#zuul µÄÂ·ÓÉ ¶¼»á¾­¹ı zuulFilter
+#é…ç½®zuul çš„è·¯ç”±åˆ†å‘ /api/sso/** éƒ½ç”±sso æœåŠ¡å¤„ç†
+#routes é…ç½®å¤šä¸ªã€‚zuul ä¸­ é…ç½®çš„è·¯ç”± éƒ½ä¼š ç»è¿‡ zuul çš„è¿‡æ»¤å™¨
 zuul:
   routes:
     api-sso:
       path: /api/sso/**
       serviceId: sso
-  #ºöÂÔµÄurl£¬routes ºÍ ignored-patterns ÅäÖÃÁËÏàÍ¬µÄ url£¬Ò²»á±»ºöÂÔ
+  #å¿½ç•¥çš„ urlï¼Œåªè¦é…ç½®å¿½ç•¥ï¼Œå°±ä¼šå¿½ç•¥å“ªæ€• routes ä¸­é…ç½®äº†
   ignored-patterns: /api/sso/**
