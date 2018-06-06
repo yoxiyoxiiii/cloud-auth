@@ -5,6 +5,7 @@ import cn.kr.authsso.domain.Menu;
 import cn.kr.authsso.domain.User;
 import cn.kr.authsso.service.UserService;
 import cn.kr.exceptions.NotFindUserException;
+import cn.kr.service.RedisService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
@@ -23,6 +24,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
+
+    @Autowired
+    private RedisService redisService;
 
     @Override
     public int deleteByPrimaryKey(Integer id) {
@@ -58,10 +62,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void login(String username, String password) {
-//        User user = userMapper.findByUsernameAndPassword(username,password);
-//        if(StringUtils.isEmpty(user)) {//用户名或密码错误！
-//            throw new NotFindUserException();
-//        }
+        User user = userMapper.findByUsernameAndPassword(username,password);
+        if(StringUtils.isEmpty(user)) {//用户名或密码错误！
+            throw new NotFindUserException();
+        }
 
     }
 
