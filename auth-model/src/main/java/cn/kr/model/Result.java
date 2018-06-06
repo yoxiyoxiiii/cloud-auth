@@ -9,26 +9,34 @@ import java.io.Serializable;
 public class Result<T> implements Serializable {
 
     public static final int NO_USER=1000;
+    public static final int BAD_RESPONSE=1001;
 
     private int code;
-    private String msg;
+//    private String msg;
     private T data;
+    private boolean status;
 
     public Result(){}
 
-    private Result(int code,String msg,T data){
+    private Result(int code,boolean status,T data){
         this.code = code;
-        this.msg = msg;
+//        this.msg = msg;
         this.data = data;
+        this.status = status;
     }
 
-    public static<T> Result<T> success(String msg, T data) {
-        Result result = new Result<T>(200,msg,data);
+    public static<T> Result<T> success(T data) {
+        Result result = new Result<T>(200,true,data);
         return result;
     }
 
-    public static Result fail(int code, String msg) {
-        Result result = new Result(code,msg,null);
+    public static Result fail(int code) {
+        Result result = new Result(code,false,null);
+        return result;
+    }
+
+    public static Result fail() {
+        Result result = new Result(BAD_RESPONSE,false,null);
         return result;
     }
 

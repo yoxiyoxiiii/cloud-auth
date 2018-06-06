@@ -1,9 +1,11 @@
-package cn.kr.authsso.dao;
+package cn.kr.authuser.dao;
 
-import cn.kr.authsso.domain.User;
+import cn.kr.authuser.domain.User;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+
 
 @Mapper
 public interface UserMapper {
@@ -47,5 +49,7 @@ public interface UserMapper {
      */
     int updateByPrimaryKey(User record);
 
-    User findByUsernameAndPassword(String username, String password);
+    User findByUsernameAndPassword(@Param("username") String username,
+                                   @Param("password") String password);
+
 }

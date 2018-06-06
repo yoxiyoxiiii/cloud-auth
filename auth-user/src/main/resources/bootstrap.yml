@@ -1,0 +1,26 @@
+#通过 spring.application.name-profile 去 config git 仓库拉去
+#下面配置就是 去 拉去 user-dev.yml 配置文件
+spring:
+  application:
+    name: user
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: config
+      profile: dev
+#  datasource: springCloud config 统一管理
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    url: jdbc:mysql:///mytestdb?useUnicode=true&characterEncoding=utf-8&useSSL=false
+#    username: root
+#    password: root
+#    driver-class-name: com.mysql.jdbc.Driver
+#    minIdle: 1
+#    maxActive: 2
+#    initialSize: 1
+#    timeBetweenEvictionRunsMillis: 3000
+#    minEvictableIdleTimeMillis: 300000
+#    validationQuery: SELECT 'ZTM' FROM DUAL
+#    testWhileIdle: true
+#    testOnBorrow: false
+#    testOnReturn: false

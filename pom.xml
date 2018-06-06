@@ -17,6 +17,7 @@
     <module>auth-eureka</module>
     <module>auth-model</module>
     <module>auth-zuul</module>
+    <module>auth-config</module>
   </modules>
 
   <properties>
