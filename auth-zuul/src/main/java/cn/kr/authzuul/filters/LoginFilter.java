@@ -73,7 +73,7 @@ public class LoginFilter extends ZuulFilter {
         if (StringUtils.isEmpty(token) || !userService.isLogin().getData()) {
             //过滤该请求，不对其进行路由分发，也就是说 请求不会到达对应的 微服务。
             requestContext.setSendZuulResponse(false);
-            Result result = Result.fail(401, "");
+            Result result = Result.fail(401);
             String json = JsonUtil.ObjectToJson(result);
             try {
                 requestContext.getResponse().getWriter().write(json);
