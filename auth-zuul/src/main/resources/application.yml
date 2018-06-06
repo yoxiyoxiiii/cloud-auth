@@ -4,10 +4,18 @@ spring:
 
 #配置zuul 的路由分发 /api/sso/** 都由sso 服务处理
 #routes 配置多个。zuul 中 配置的路由 都会 经过 zuul 的过滤器
+#注意：
+#当配置了 zuul 后，如果外部访问的路由没有在zuul中配置，将返回404
+#也就是说 一旦将zuul 配置，zuul 就开始保护系统所有的服务
+#使得 外部 不能直接 访问 系统的内部服务（不对外暴露的）
+#配置好的路由 将会 经过 zuul 的过滤器。
 zuul:
   routes:
     api-sso:
       path: /api/sso/**
       serviceId: sso
+    api-user:
+      path: /api/user/**
+      serviceId: sso
   #忽略的 url，只要配置忽略，就会忽略哪怕 routes 中配置了
-  ignored-patterns: /api/sso/**
+#  ignored-patterns: /api/sso/**
