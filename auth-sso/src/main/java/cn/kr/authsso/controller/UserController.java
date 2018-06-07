@@ -32,10 +32,10 @@ public class UserController {
     ) {
         try{
             int id = userService.register(username, password);
-            return Result.success("注册成功!",id);
+            return Result.success(id);
         }catch (Exception e) {
             log.error(e.getMessage());
-            return Result.fail(400,"注册失败!");
+            return Result.fail();
         }
 
     }
@@ -54,26 +54,26 @@ public class UserController {
     ) {
         try{
             userService.login(username,password);
-            return Result.success("登录成功!",null);
+            return Result.success(null);
         }catch (Exception e) {
             log.error(e.getMessage());
-            return Result.fail(400,"登录失败!");
+            return Result.fail();
         }
     }
 
     @GetMapping("/isLogin/{token}")
     public Result<Boolean> isLogin(@PathVariable("token") String token) {
         boolean isLogin = userService.isLogin(token);
-        return Result.success("查询成功!",isLogin);
+        return Result.success(isLogin);
     }
 
     @GetMapping
     public Result<String> hello () {
-        return Result.success("hello","hello");
+        return Result.success(null);
     }
     @GetMapping("isLogin")
     public Result<Boolean> isLogin () {
-        return Result.success("hello",false);
+        return Result.success(false);
     }
 
 }
