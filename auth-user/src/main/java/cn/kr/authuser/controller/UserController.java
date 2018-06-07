@@ -10,6 +10,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * 用户管理
+ * @author Administrator
+ */
 @Slf4j
 @RestController
 @RequestMapping("/api/user")
