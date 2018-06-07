@@ -6,6 +6,7 @@ import cn.kr.authuser.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -31,12 +32,15 @@ public class UserServiceImpl implements UserService {
         userMapper.insert(user);
     }
 
+
+    @Transactional(propagation = Propagation.NOT_SUPPORTED)
     @Override
     public User findOne(String username, String password) {
         User user = userMapper.findByUsernameAndPassword(username,password);
         return user;
     }
 
+    @Transactional(propagation = Propagation.NOT_SUPPORTED)
     @Override
     public List<User> findAll() {
         return userMapper.selectAll();
