@@ -3,6 +3,7 @@ package cn.kr;
 /**
  * Hello world!
  *
+ * @author Administrator
  */
 public class App 
 {

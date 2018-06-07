@@ -6,6 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 
+/**
+ * 操作redis 实现类
+ * @author Administrator
+ */
 @Slf4j
 @Service
 public class RedisServiceImpl implements RedisService {

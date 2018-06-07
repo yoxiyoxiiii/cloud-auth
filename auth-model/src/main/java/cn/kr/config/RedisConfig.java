@@ -13,6 +13,10 @@ import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 
+/**
+ * redis 配置
+ * @author Administrator
+ */
 @Configuration
 public class RedisConfig {
 

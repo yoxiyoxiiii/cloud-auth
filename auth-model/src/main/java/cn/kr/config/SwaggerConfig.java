@@ -16,21 +16,25 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Swagger 配置
+ * @author Administrator
+ */
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
 
     @Bean
     public Docket createRestApi() {
-        ParameterBuilder authParmBuilder = new ParameterBuilder();
-        authParmBuilder.name("token")
+        ParameterBuilder authPalmBuilder = new ParameterBuilder();
+        authPalmBuilder.name("token")
                 .description("token")
                 .modelRef(new ModelRef("string"))
                 .parameterType("header")
                 .required(false)
                 .build();
         List<Parameter> addParameters = new ArrayList<>();
-        addParameters.add(authParmBuilder.build());
+        addParameters.add(authPalmBuilder.build());
 
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())

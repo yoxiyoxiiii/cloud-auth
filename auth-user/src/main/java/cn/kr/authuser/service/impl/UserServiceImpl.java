@@ -10,14 +10,17 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * @author Administrator
+ */
 @Slf4j
 @Service
-@Transactional
 public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
 
+    @Transactional(rollbackFor = Exception.class)
     @Override
     public void register(String username, String password) {
         User user = User

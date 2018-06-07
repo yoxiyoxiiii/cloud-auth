@@ -4,6 +4,7 @@ import lombok.Data;
 
 /**
  * 自定义异常
+ * @author Administrator
  */
 @Data
 public class GeneralException extends RuntimeException {

@@ -9,11 +9,15 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+/**
+ * 单点登录
+ * @author Administrator
+ */
 @Api("单点登录")
 @Slf4j
 @RestController
 @RequestMapping("/api/sso")
-public class UserController {
+public class SsoController {
 
     @Autowired
     private UserService userService;

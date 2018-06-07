@@ -7,6 +7,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * 统一配置管理
+ * @author Administrator
  */
 @EnableEurekaClient
 @EnableConfigServer

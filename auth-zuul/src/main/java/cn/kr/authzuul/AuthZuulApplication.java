@@ -6,6 +6,10 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
+/**
+ * api 网关
+ * @author Administrator
+ */
 @SpringBootApplication
 @EnableEurekaClient
 @EnableZuulProxy

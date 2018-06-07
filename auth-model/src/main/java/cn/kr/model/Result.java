@@ -5,6 +5,10 @@ import lombok.Data;
 
 import java.io.Serializable;
 
+/**
+ * 返回对象定义
+ * @author Administrator
+ */
 @Data
 public class Result<T> implements Serializable {
 
@@ -12,7 +16,6 @@ public class Result<T> implements Serializable {
     public static final int BAD_RESPONSE=1001;
 
     private int code;
-//    private String msg;
     private T data;
     private boolean status;
 
@@ -20,7 +23,6 @@ public class Result<T> implements Serializable {
 
     private Result(int code,boolean status,T data){
         this.code = code;
-//        this.msg = msg;
         this.data = data;
         this.status = status;
     }

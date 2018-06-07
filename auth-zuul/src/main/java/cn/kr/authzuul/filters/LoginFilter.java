@@ -24,6 +24,7 @@ import java.io.IOException;
  filterOrder：过滤器的顺序
  shouldFilter：这里可以写逻辑判断，是否要过滤。
  run：过滤器的具体逻辑。
+ * @author Administrator
  */
 @Configuration
 public class LoginFilter extends ZuulFilter {
@@ -74,7 +75,7 @@ public class LoginFilter extends ZuulFilter {
             //过滤该请求，不对其进行路由分发，也就是说 请求不会到达对应的 微服务。
             requestContext.setSendZuulResponse(false);
             Result result = Result.fail(401);
-            String json = JsonUtil.ObjectToJson(result);
+            String json = JsonUtil.objectToJson(result);
             try {
                 requestContext.getResponse().getWriter().write(json);
                 return null;
