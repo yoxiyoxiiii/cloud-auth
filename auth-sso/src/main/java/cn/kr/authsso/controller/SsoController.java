@@ -1,6 +1,6 @@
 package cn.kr.authsso.controller;
 
-import cn.kr.authsso.service.UserService;
+import cn.kr.authsso.client.UserService;
 import cn.kr.model.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;

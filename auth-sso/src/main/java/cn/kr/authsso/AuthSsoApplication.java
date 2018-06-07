@@ -4,8 +4,11 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.netflix.feign.EnableFeignClients;
+import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+
 
 /**
  * 单点登录服务
@@ -17,6 +20,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableCaching
 @SpringBootApplication
 @EnableEurekaClient
+@EnableFeignClients
 @EnableTransactionManagement
 @ComponentScan(basePackages = "cn.kr")
 public class AuthSsoApplication {
