@@ -7,11 +7,17 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+/**
+ * 单点登录服务
+ * @author
+ *
+ * 多模块开发时需要定义包扫描路径
+ * @ComponentScan(basePackages = "cn.kr")
+ */
 @EnableCaching
 @SpringBootApplication
 @EnableEurekaClient
 @EnableTransactionManagement
-//多模块开发时需要定义包扫描路径
 @ComponentScan(basePackages = "cn.kr")
 public class AuthSsoApplication {
 

@@ -7,6 +7,10 @@ import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
+/**
+ * 用户服务
+ * @author Administrator
+ */
 @EnableEurekaClient
 @SpringBootApplication
 @EnableTransactionManagement

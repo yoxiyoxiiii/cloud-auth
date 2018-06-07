@@ -6,6 +6,10 @@ import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
+/**
+ * 用户实体
+ * @author Administrator
+ */
 @Data
 @Builder
 @AllArgsConstructor
