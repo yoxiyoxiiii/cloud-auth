@@ -1,12 +1,15 @@
 package cn.kr.authsso.client;
 
+import cn.kr.model.Result;
 import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * user 服务客户端接口
  * @author yj
  */
 @FeignClient(value = "user")
+@RequestMapping("/api/user")
 public interface UserService {
 
     /**
@@ -15,7 +18,11 @@ public interface UserService {
      * @param password
      * @return
      */
-    int register(String username, String password);
+    @PostMapping
+    Result<Integer> register (
+            @RequestParam("username") String username,
+            @RequestParam("password") String password
+    );
 
 
     /**
@@ -23,13 +30,17 @@ public interface UserService {
      * @param username
      * @param password
      */
-    void login(String username, String password);
+    @GetMapping("{username}/{password}")
+     Result login(
+            @PathVariable("username") String username,
+            @PathVariable("username") String password
+    );
 
-    /**
-     * 用户是否登录
-     * @param token
-     * @return
-     */
-    boolean isLogin(String token);
+//    /**
+//     * 用户是否登录
+//     * @param token
+//     * @return
+//     */
+//    boolean isLogin(String token);
 
 }
