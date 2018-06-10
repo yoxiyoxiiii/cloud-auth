@@ -13,6 +13,7 @@
   <url>http://www.example.com</url>
 
   <modules>
+
     <module>auth-model</module>
     <module>auth-eureka</module>
     <module>auth-zuul</module>
