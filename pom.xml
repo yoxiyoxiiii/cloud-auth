@@ -13,12 +13,12 @@
   <url>http://www.example.com</url>
 
   <modules>
-    <module>auth-sso</module>
-    <module>auth-eureka</module>
     <module>auth-model</module>
+    <module>auth-eureka</module>
     <module>auth-zuul</module>
     <module>auth-config</module>
     <module>auth-user</module>
+    <module>auth-sso</module>
   </modules>
 
   <properties>
