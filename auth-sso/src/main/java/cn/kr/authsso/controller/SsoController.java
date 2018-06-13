@@ -30,13 +30,13 @@ public class SsoController {
      */
     @ApiOperation("用户注册")
     @PostMapping
-    public Result<Integer> register(
+    public Result<Object> register(
             @RequestParam(name = "username") @ApiParam("用户名") String username,
             @RequestParam(name = "password") @ApiParam("密码") String password
     ) {
         try{
-            int id = userService.register(username, password);
-            return Result.success(id);
+            Result result = userService.register(username, password);
+            return Result.success(result.getData());
         }catch (Exception e) {
             log.error(e.getMessage());
             return Result.fail();
@@ -67,14 +67,15 @@ public class SsoController {
 
     @GetMapping("/isLogin/{token}")
     public Result<Boolean> isLogin(@PathVariable("token") String token) {
-        boolean isLogin = userService.isLogin(token);
-        return Result.success(isLogin);
+//        boolean isLogin = userService.isLogin(token);
+        return Result.success(true);
     }
 
     @GetMapping
     public Result<String> hello () {
         return Result.success(null);
     }
+
     @GetMapping("isLogin")
     public Result<Boolean> isLogin () {
         return Result.success(false);
