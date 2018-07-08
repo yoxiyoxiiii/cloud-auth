@@ -20,6 +20,7 @@
     <module>auth-config</module>
     <module>auth-user</module>
     <module>auth-sso</module>
+    <module>auth-rabbitmq</module>
   </modules>
 
   <properties>
