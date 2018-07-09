@@ -6,9 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RefreshScope
+@RefreshScope//刷新 test 属性，动态刷新。
 public class ConfigTest {
-
     @Value("${test}")
     private String test;
 
